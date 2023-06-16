@@ -1,12 +1,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
 /**
- * main - entery point
- *
- * Return: Alwyas 0 (SUCCESS))
- */
+  *main
+  *Discription: 'Check for number if pos or neg'
+  *Return: Always (0)
+  */
 int main(void)
 {
 	int n;
