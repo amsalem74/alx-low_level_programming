@@ -1,8 +1,6 @@
 #include "main.h"
 /**
- * main - print _alphabet 10 tiems
- *
- * Return: Alawys 0
+ * print_alphabet_x10 - Prints the alphabet 10 times using the _putchar function
  */
 void print_alphabet_x10(void)
 {
