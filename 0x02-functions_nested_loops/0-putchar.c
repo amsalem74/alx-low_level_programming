@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 /**
   * main - Entery point
   * Discreption: 'print _putchar to stdout
