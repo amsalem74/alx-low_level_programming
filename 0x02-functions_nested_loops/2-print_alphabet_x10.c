@@ -2,7 +2,7 @@
 /**
  * main - print _alphabet 10 tiems
  *
- * Return:Alawys 0
+ * Return: Alawys 0
  */
 void print_alphabet_x10(void)
 {
