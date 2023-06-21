@@ -1,5 +1,6 @@
-#include "main.h"
+#include <limits.h>
 #include <stdio.h>
+#include "main.h"
 /**
  * print_sign - Prints the sign of a number.
  *greater than zero equal or less than zero
