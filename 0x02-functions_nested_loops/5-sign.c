@@ -24,6 +24,16 @@ else if (n == 0)
 else
 {
 	putchar('-');
+	n *= -1;
+	   }
+    /* print digits of n */
+    if (n >= 100)
+        putchar(n / 100 + '0');
+    if (n >= 10)
+        putchar((n / 10) % 10 + '0');
+    putchar(n % 10 + '0');
+    return -1;
+}
 	return (-1);
 	}
 }
