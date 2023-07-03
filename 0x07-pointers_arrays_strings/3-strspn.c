@@ -5,32 +5,29 @@
  * @s: The string to be searched.
  * @accept: The string containing the characters to match.
  *
- * Return: The number of bytes in the initial segment of s
- *         which consist only of bytes from accept.
+ * Return: The number of bytes in the initial segment of `s`
+ *         consisting only of bytes from `accept`.
  */
 unsigned int _strspn(char *s, char *accept)
 {
+    unsigned int i, j;
     unsigned int count = 0;
-    int match;
 
-    while (*s)
+    for (i = 0; s[i]; i++)
     {
-        match = 0;
-        while (*accept)
+        for (j = 0; accept[j]; j++)
         {
-            if (*s == *accept)
+            if (s[i] == accept[j])
             {
                 count++;
-                match = 1;
                 break;
             }
-            accept++;
         }
-        if (!match)
+
+        if (!accept[j])
             break;
-        s++;
-        accept = accept - count;
     }
 
     return count;
 }
+
