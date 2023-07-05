@@ -1,44 +1,35 @@
 #include "main.h"
 
 /**
- * sqrt_helper - Recursive helper function to find the square root
- * @n: The number to find the square root of
- * @start: The starting point for the search range
- * @end: The ending point for the search range
+ * _sqrt_recursion - returns the natural square root of a number.
+ * @n: the number to compute the square root of.
  *
- * Return: The square root of n, or -1 if no natural square root exists
+ * Return: the natural square root of `n`, or -1 if `n` does not have a
+ * natural square root.
  */
-int sqrt_helper(int n, int start, int end)
+int _sqrt_helper(int n, int low, int high);
+
+int _sqrt_recursion(int n)
 {
-	int mid;
-
-	if (start > end)
-		return (-1);
-
-	mid = (start + end) / 2;
-
-	if (mid * mid == n)
-		return (mid);
-
-	if (mid * mid < n)
-	{
-		if ((mid + 1) * (mid + 1) > n)
-			return (-1);
-		return (sqrt_helper(n, mid + 1, end));
-	}
-
-	return (sqrt_helper(n, start, mid - 1));
+    if (n < 0)
+        return (-1);
+    return (_sqrt_helper(n, 0, n));
 }
 
-/**
- * _sqrt_recursion - Returns the natural square root of a number
- * @n: The number to find the square root of
- *
- * Return: The square root of n, or -1 if no natural square root exists
- */
-int actual_sqrt_recursion(int n)
+int _sqrt_helper(int n, int low, int high)
 {
-	if (n < 0)
-		return (-1);
-	return (actual_sqrt_recursion(n, 0));
+    int mid;
+
+    if (low > high)
+        return (-1);
+
+    mid = (low + high) / 2;
+
+    if (mid * mid == n)
+        return (mid);
+
+    if (mid * mid > n)
+        return (_sqrt_helper(n, low, mid - 1));
+
+    return (_sqrt_helper(n, mid + 1, high));
 }
