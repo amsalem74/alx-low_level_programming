@@ -38,7 +38,7 @@ int sqrt_helper(int n, int start, int end)
  */
 int _sqrt_recursion(int n)
 {
-	if (n == 0 || n == 1)
-		return (n);
-	return (sqrt_helper(n, 1, n));
+	if (n < 0)
+		return (-1);
+	return (actual_sqrt_recursion(n, 0));
 }
