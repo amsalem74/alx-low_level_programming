@@ -16,14 +16,16 @@ int sqrt_helper(int n, int start, int end)
         return -1;
 
     mid = (start + end) / 2;
-    int sqrt = mid * mid;
 
-    if (sqrt == n)
+    if (mid * mid == n)
         return mid;
-    else if (sqrt < n)
+    if (mid * mid < n)
+    {
+        if ((mid + 1) * (mid + 1) > n)
+            return -1;
         return sqrt_helper(n, mid + 1, end);
-    else
-        return sqrt_helper(n, start, mid - 1);
+    }
+    return sqrt_helper(n, start, mid - 1);
 }
 
 /**
