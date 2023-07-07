@@ -1,10 +1,26 @@
 #include "main.h"
 
-void _puts(char *s)
+/**
+  * _strncpy -copy a string
+  * @dest: input value
+  * @src: input value
+  * @n: input value
+  * Return: dest
+  */
+char *_strncpy(char *dest, char *src, int n)
 {
-    while (*s != '\0')
-    {
-        _putchar(*s);
-        s++;
-    }
+	int j;
+
+	j = 0;
+	while (j < n && src[j] != '\0')
+	{
+		dest[j] = src[j];
+		j++;
+	}
+	while (j < n)
+	{
+		dest[j] = '\0';
+		j++;
+	}
+	return (dest);
 }

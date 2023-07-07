@@ -1,10 +1,20 @@
+#include <stdio.h>
 #include "main.h"
-
-void _puts(char *s)
+/**
+  * _memset - fill a block of memory with a constant byte
+  * @s: memory area to be filled
+  * @b: char to copy
+  * @n: number of times to be copy b
+  *
+  * Return: pointer to the meomry area s
+  */
+char *_memset(char *s, char b, unsigned int n)
 {
-    while (*s != '\0')
-    {
-        _putchar(*s);
-        s++;
-    }
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
+	return (s);
 }

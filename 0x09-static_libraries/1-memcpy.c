@@ -1,10 +1,25 @@
 #include "main.h"
-
-void _puts(char *s)
+/**
+  * _memcpy - functions copies @n bytes from memory area @src
+  * to memory area @dest
+  *
+  * @n: functions copies
+  *
+  * @src: bytes from memory area
+  *
+  * @dest: to memory area
+  *
+  * Return: pointer to @dest
+  */
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-    while (*s != '\0')
-    {
-        _putchar(*s);
-        s++;
-    }
+	unsigned int i = 0;
+
+	while (i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+
+	return (dest);
 }

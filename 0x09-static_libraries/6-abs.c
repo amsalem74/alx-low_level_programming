@@ -1,10 +1,16 @@
 #include "main.h"
-
-void _puts(char *s)
+/**
+ * _abs - Computes the absolute value of an integer.
+ *
+ * @n: The input integer.
+ *
+ * Return: The absolute value of n.
+ */
+int _abs(int n)
 {
-    while (*s != '\0')
-    {
-        _putchar(*s);
-        s++;
-    }
+	if (n >= 0)
+	{
+		return (n);
+	}
+	return (-n);
 }
