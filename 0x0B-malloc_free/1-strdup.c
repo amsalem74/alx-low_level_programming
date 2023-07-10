@@ -1,28 +1,34 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
-  * _strdup -duplicated to new meomry space location
-  * @str:char
-  * Return: 0
-  */
+ * _strdup - creates a duplicate of a string
+ * @str: the string to duplicate
+ *
+ * Return: pointer to the duplicated string, NULL if str is NULL 
+ * or if memory allocation fails
+ */
 char *_strdup(char *str)
 {
-	char *aaa;
-	int i, r = 0;
+	char *dup;
+	int len, i;
 
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (str[i] != '\0')
-		i++;
+    if (str == NULL)
+	    return NULL;
 
-	aaa = malloc(sizeof(char) * (i + 1));
+    len = 0;
+    while (str[len] != '\0')
+	    len++;
 
-	if (aaa == NULL)
-		return (NULL);
-	for r = 0, str[i]; r++)
-		aaa[r] = str[r];
+    dup = malloc(sizeof(char) * (len + 1));
+    if (dup == NULL)
+	    return NULL;
 
-	return (aaa);
+    for (i = 0; i < len; i++)
+	    dup[i] = str[i];
+
+    dup[len] = '\0';
+
+    return dup;
 }
