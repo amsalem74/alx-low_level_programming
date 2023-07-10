@@ -3,32 +3,37 @@
 #include <stdlib.h>
 
 /**
- * _strdup - creates a duplicate of a string
- * @str: the string to duplicate
+ * str_concat - concatenates two strings
+ * @s1: the first string
+ * @s2: the second string
  *
- * Return: pointer to the duplicated string, NULL if str is NULL
- * or if memory allocation fails
+ * Return: pointer to the concatenated string, NULL on failure
  */
-char *_strdup(char *str)
+char *str_concat(char *s1, char *s2)
 {
-	char *dup;
-	int len, i;
+	char *concat;
+	int len1 = 0, len2 = 0, i, j;
 
-	if (str == NULL)
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	while (s1[len1] != '\0')
+		len1++;
+	while (s2[len2] != '\0')
+		len2++;
+
+	concat = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (concat == NULL)
 		return (NULL);
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
+	for (i = 0; i < len1; i++)
+		concat[i] = s1[i];
+	for (j = 0; j < len2; j++)
+		concat[i + j] = s2[j];
 
-	dup = malloc(sizeof(char) * (len + 1));
-	if (dup == NULL)
-		return (NULL);
+	concat[i + j] = '\0';
 
-	for (i = 0; i < len; i++)
-		dup[i] = str[i];
-
-	dup[len] = '\0';
-
-	return (dup);
+	return (concat);
 }
